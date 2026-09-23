@@ -36,7 +36,8 @@ class Dialect(presto.Dialect):
     ARG_SYMBOL = "?"
 
     def set_timezone_to_utc(self) -> str:
-        return "SET TIME ZONE '+00:00'"
+        # return "SET TIME ZONE '+00:00'"
+        raise NotImplementedError("TODO")
 
     def uuid_value(self, u: uuid.UUID) -> str:
         return f"CAST('{u}' AS UUID)"
